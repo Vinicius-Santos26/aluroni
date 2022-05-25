@@ -10,7 +10,7 @@ interface SearchProps {
 export default function Search({ search, setSearch }: SearchProps) {
     return (
         <div className={styles.buscador}>
-            <input value={search} onChange={(event) => setSearch(event.target.value)} />
+            <input value={search} onChange={(event) => setSearch(event.target.value)}  placeholder="Buscar"/>
             <CgSearch size={20} color='#4C4D5E' />
         </div>
     );
