@@ -1,9 +1,12 @@
-import styles from "./Menu.module.scss";
-import { ReactComponent as Logo } from "assets/logo.svg";
+import { useState } from "react";
+
 import Search from "./Search";
 import Filter from "./Filter";
 import Ordenator from "./Ordenator";
-import { useState } from "react";
+import Itens from "./Itens";
+
+import styles from "./Menu.module.scss";
+import { ReactComponent as Logo } from "assets/logo.svg";
 
 export default function Menu() {
     const [search, setSearch] = useState("");
@@ -25,6 +28,7 @@ export default function Menu() {
                     <Filter filter={filter} setFilter={setFilter} />
                     <Ordenator order={order} setOrder={setOrder} />
                 </div>
+                <Itens />
             </section>
         </main>
     );
