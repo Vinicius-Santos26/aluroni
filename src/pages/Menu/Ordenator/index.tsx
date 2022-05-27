@@ -5,9 +5,11 @@ import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
 import options from "./options.json";
 import styles from "./Ordenator.module.scss";
 
+export type OrderOptions = '' | 'size' | 'serving' | 'price';
+
 interface PropsOrdenator {
-    order: string;
-    setOrder: React.Dispatch<React.SetStateAction<string>>;
+    order: OrderOptions;
+    setOrder: React.Dispatch<React.SetStateAction<OrderOptions>>;
 }
 
 export default function Ordenator({ order, setOrder }: PropsOrdenator) {
@@ -33,7 +35,7 @@ export default function Ordenator({ order, setOrder }: PropsOrdenator) {
                     <div
                         className={styles.ordenador__option}
                         key={option.value}
-                        onClick={() => setOrder(option.value)}>
+                        onClick={() => setOrder(option.value as OrderOptions)}>
                         {option.nome}
                     </div>
                 ))}
